@@ -7,6 +7,7 @@ import CheckIcon from '../svg-icons/navigation/check';
 import ListItem from '../List/ListItem';
 import Menu from '../Menu/Menu';
 import propTypes from '../utils/propTypes';
+import getMuiTheme from '../styles/getMuiTheme';
 
 const nestedMenuStyle = {
   position: 'relative',
@@ -153,13 +154,13 @@ class MenuItem extends Component {
   };
 
   static defaultProps = {
-    anchorOrigin: {horizontal: 'right', vertical: 'top'},
+    anchorOrigin: {horizontal: (getMuiTheme().isRtl ? 'left' : 'right'), vertical: 'top'},
     checked: false,
     desktop: false,
     disabled: false,
     focusState: 'none',
     insetChildren: false,
-    targetOrigin: {horizontal: 'left', vertical: 'top'},
+    targetOrigin: {horizontal: (getMuiTheme().isRtl ? 'right' : 'left'), vertical: 'top'},
   };
 
   static contextTypes = {

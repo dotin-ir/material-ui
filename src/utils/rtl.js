@@ -25,7 +25,7 @@ export default function rtl(muiTheme) {
         borderLeft: 'borderRight',
       };
 
-      const newStyle = {};
+      const newStyle = {direction: 'rtl'};
 
       Object.keys(style).forEach(function(attribute) {
         let value = style[attribute];

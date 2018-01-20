@@ -1,19 +1,22 @@
 {
-  "name": "material-ui-build",
-  "private": true,
-  "author": "Material-UI Team",
-  "version": "0.20.0",
+  "name": "dotin-material-ui-build",
+  "author": "Call-em-all Engineering Team & Dotin Continuous Improvement Engineering Team (Forked)",
+  "version": "0.20.0-0",
   "description": "React Components that Implement Google's Material Design.",
   "main": "./src/index.js",
   "keywords": [
     "react",
     "react-component",
     "material design",
-    "material-ui"
+    "material-ui",
+    "dotin-material-ui"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/callemall/material-ui.git"
+    "url": "https://gsc.dotin.local:8446/tfs/CoreCollection/Raptor/_git/dotin-material-ui"
+  },
+  "publishConfig": {
+    "registry": "https://nexus3.dotin.ir/repository/Core-Release/"
   },
   "license": "MIT",
   "bugs": {
@@ -41,7 +44,7 @@
     "test:integration:watch": "cross-env NODE_ENV=test babel-node test/watch.js integration",
     "test:unit": "cross-env NODE_ENV=test babel-node test/index.js unit",
     "test:unit:watch": "cross-env NODE_ENV=test babel-node test/watch.js unit",
-    "postpublish": "npm run build && cd build && npm publish"
+    "publish": "npm run prebuild && npm run build && npm publish ./build --registry https://nexus3.dotin.ir/repository/Core-Release/"
   },
   "peerDependencies": {
     "react": "^15.4.0 || ^16.0.0",
